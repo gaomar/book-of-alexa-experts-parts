@@ -1,0 +1,29 @@
+{
+    "skilldata": {
+        "type": "object",
+        "image": [
+            {
+                "icon": "https://s3-ap-northeast-1.amazonaws.com/alexa-uketsuke/apoButton.png",
+                "name": "apo"
+            },
+            {
+                "icon": "https://s3-ap-northeast-1.amazonaws.com/alexa-uketsuke/mensetuButton.png",
+                "name": "mensetsu"
+            },
+            {
+                "icon": "https://s3-ap-northeast-1.amazonaws.com/alexa-uketsuke/otherButton.png",
+                "name": "other"
+            }
+        ],
+        "properties": {
+          "Ssml_0": "<speak>タップしてください。</speak>"
+        },
+        "transformers": [
+            {
+                "inputPath": "Ssml_0",
+                "outputName": "Speech_0",
+                "transformer": "ssmlToSpeech"
+            }
+        ]
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "type": "APL",
+    "version": "1.1",
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.0.0"
+        }
+    ],
+    "resources": [
+        {
+            "strings": {
+                "skillName": "受付システム"
+            }
+        }
+    ],
+    "styles": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "direction": "column",
+                "items": [
+                    {
+                        "type": "Frame",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "backgroundColor": "#999999"
+                    },
+                    {
+                        "type": "Frame",
+                        "width": "100vw",
+                        "height": "15vh",
+                        "backgroundColor": "#b52e29",
+                        "position": "absolute"
+                    },
+                    {
+                        "type": "Container",
+                        "position": "absolute",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "@skillName",
+                                "height": "15vh",
+                                "paddingLeft": "4vw",
+                                "textAlignVertical": "center"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Container",
+                        "width": "100vw",
+                        "height": "70vh",
+                        "alignItems": "stretch",
+                        "justifyContent": "center",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "style": "textStyleBody",
+                                "spacing": "@spacingSmall",
+                                "textAlign": "center",
+                                "textAlignVertical": "center",
+                                "fontSize": "80dp",
+                                "text": "${payload.skilldata.maintext}",
+                                "fontWeight": "normal"
+                            }
+                        ],
+                        "position": "absolute"
+                    },
+                    {
+                        "type": "Text",
+                        "id": "SpeechComponent_0",
+                        "speech": "${payload.skilldata.properties.Speech_0}"
+                    }
+                ]
+            }
+        ]
+    }
+}

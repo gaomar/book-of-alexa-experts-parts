@@ -1,0 +1,98 @@
+{
+    "type": "APL",
+    "version": "1.1",
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.0.0"
+        }
+    ],
+    "resources": [
+        {
+            "strings": {
+                "skillName": "受付システム",
+                "menuText": "該当するメニューをタップしてください。"
+            }
+        }
+    ],
+    "styles": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "direction": "column",
+                "items": [
+                    {
+                        "type": "Frame",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "backgroundColor": "#999999"
+                    },
+                    {
+                        "type": "Frame",
+                        "width": "100vw",
+                        "height": "15vh",
+                        "backgroundColor": "#b52e29",
+                        "position": "absolute"
+                    },
+                    {
+                        "type": "Container",
+                        "position": "absolute",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "@skillName",
+                                "height": "15vh",
+                                "paddingLeft": "4vw",
+                                "textAlignVertical": "center"
+                            },
+                            {
+                                "type": "Container",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "height": "70vh",
+                                "items": [
+                                    {
+                                        "type": "Sequence",
+                                        "scrollDirection": "horizontal",
+                                        "data": "${payload.skilldata.image}",
+                                        "width": "100vw",
+                                        "item": {
+                                            "type": "TouchWrapper",
+                                            "onPress": [
+                                                {
+                                                    "type": "SendEvent",
+                                                    "arguments": [
+                                                        "${data.name}"
+                                                    ]
+                                                }
+                                            ],
+                                            "item": {
+                                                "type": "Image",
+                                                "source": "${data.icon}",
+                                                "width": "34vw",
+                                                "height": "34vh"
+                                            }
+                                        }
+                                    }
+                                ]                                
+                            },
+                            {
+                                "type": "Text",
+                                "id": "SpeechComponent_0",
+                                "speech": "${payload.skilldata.properties.Speech_0}",
+                                "text": "@menuText",
+                                "textAlign": "center"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
