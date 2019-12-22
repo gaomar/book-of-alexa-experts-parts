@@ -3,15 +3,15 @@
         "type": "object",
         "image": [
             {
-                "icon": "https://s3-ap-northeast-1.amazonaws.com/alexa-uketsuke/apoButton.png",
+                "icon": "https://raw.githubusercontent.com/gaomar/book-of-alexa-experts-parts/master/images/apoButton.png",
                 "name": "apo"
             },
             {
-                "icon": "https://s3-ap-northeast-1.amazonaws.com/alexa-uketsuke/mensetuButton.png",
+                "icon": "https://raw.githubusercontent.com/gaomar/book-of-alexa-experts-parts/master/images/mensetuButton.png",
                 "name": "mensetsu"
             },
             {
-                "icon": "https://s3-ap-northeast-1.amazonaws.com/alexa-uketsuke/otherButton.png",
+                "icon": "https://raw.githubusercontent.com/gaomar/book-of-alexa-experts-parts/master/images/otherButton.png",
                 "name": "other"
             }
         ],
